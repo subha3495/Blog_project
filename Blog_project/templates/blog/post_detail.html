@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}{{post.title}}{% endblock %}
+{% block content %}
+<h1>{{post.title}}</h1>
+<p id="date">published on {{post.publish}} by {{post.author|title}}</p>
+{{post.body|linebreaks}}
+<div class="container" align="center">
+    <a href="/{{post.id}}/share" class="btn btn-lg btn-success">Share Post Email</a>
+</div>
+{% with comments.count as comment_count %}
+<h2>{{comment_count}} Comment{{comments_count|pluralize}}</h2>
+{% endwith %}
+{% if comments %}
+{% for comment in comments %}
+<p id='ch'> Comment {{forloop.counter}} by {{comment.name}} on {{comment.created}} </p>
+<div class="cb">{{comment.body|linebreaks}}</div>
+{% endfor %}
+{% else %}
+<p>There are no comments yet </p>
+{% endif %}
+{% if csubmit %}
+<h2>Your comment Added Successfully</h2>
+{% else %}
+<h2>You can submit your comment it is more valuable for us </h2>
+<form method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary btn-success" value="Submit Comment">
+</form>
+{% endif %}
+{% endblock %}

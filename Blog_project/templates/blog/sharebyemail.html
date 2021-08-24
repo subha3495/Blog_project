@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}Share Post by Email{% endblock %}
+{% block content %}
+{% if sent%}
+<h1> Email Successfully sent </h1>
+<h1>Post with the title {{post.title}} information shared by Email </h1>
+{% else %}
+
+    <h1>Share post with title :{{post.title}} By Email</h1>
+<form method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit"  class="btn btn-primary" value="send mail">
+</form>
+{% endif %}
+{% endblock %}

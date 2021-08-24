@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<table border="1">
+    <thead>
+    <th>EMPLOYEE NAME</th>
+    <th>EMPLOYEE SALARY</th>
+    <th>EMPLOYEE AGE</th>
+    <th>UPDATE</th>
+    <th>DELETE</th>
+    </thead>
+    {% for e in employee %}
+    <tr>
+        <td>{{e.ename}}</td>
+        <td>{{e.esalary}}</td>
+        <td>{{e.eage}}</td>
+        <td><a href="update/{{e.id}}">update</a></td>
+        <td><a href="delete/{{e.id}}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+<a href="create" class="btn btn-large">CREATE NEW RECORD</a>
+{% endblock%}

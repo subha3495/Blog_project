@@ -1,0 +1,35 @@
+.content{
+width:60%;
+float:left;
+padding: 0 0 0 30px;
+background-color:red;
+}
+.sidebar{
+width:40%;
+float:right;
+padding: 0 0 0 10px;
+background:red;
+}
+h1{
+text-align:center;
+border-bottom:1px solid green;
+padding-bottom:10px;
+}
+body{
+text-color:red;
+background:red;
+}
+#date{
+color:green;
+font-size:12px;
+font-style:italic;
+}
+.tagbox{
+border:1px solid orange;
+}
+
+.pcount{
+font-size: 40px;
+color: green;
+font-width: bold;
+}

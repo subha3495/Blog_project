@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<center><H1>Book Information</H1></center>
+<hr>
+{% for book in book_list %}
+<ul><h3><a href="{{book.id}}">Book Title:{{book.title}}</a></h3></ul>
+{% endfor %}
+<a href="/create" class="btn btn-info"> Create New Book record</a>
+
+</body>
+</html>
