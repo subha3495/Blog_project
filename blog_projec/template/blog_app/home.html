@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Blogs Headline</h1>
+{% for b in context %}
+<table style="width:100%">
+  <tr>
+    <th>BLOG NAME</th>
+    <th>AUTHOR NAME</th>
+  </tr>
+    <tr>
+    <th>{{b.blog_name}}</th>
+    <th>{{b.author_name}}</th>
+    </tr>
+
+</table>
+</body>
+</html>
